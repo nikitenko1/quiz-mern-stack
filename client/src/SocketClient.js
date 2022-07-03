@@ -33,7 +33,7 @@ const SocketClient = () => {
 
       spawnNotification(
         data.title,
-        `${process.env.CLIENT_URL}`,
+        `${process.env.REACT_APP_URL}`,
         'Let&apos;s build | Kyiv'
       );
     });
@@ -51,7 +51,7 @@ const SocketClient = () => {
 
       spawnNotification(
         data.title,
-        `${process.env.CLIENT_URL}/${data.link}`,
+        `${process.env.REACT_APP_URL}/${data.link}`,
         'Let&apos;s build | Kyiv'
       );
     });
@@ -68,7 +68,7 @@ const SocketClient = () => {
 
       spawnNotification(
         data.title,
-        `${process.env.CLIENT_URL}/${data.link}`,
+        `${process.env.REACT_APP_URL}/${data.link}`,
         'Let&apos;s build | Kyiv'
       );
     });
