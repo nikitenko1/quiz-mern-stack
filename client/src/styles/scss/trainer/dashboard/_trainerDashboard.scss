@@ -1,0 +1,43 @@
+.teacherDashboard {
+  &__header {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 30px;
+  }
+  &__body {
+    margin-top: 35px;
+
+    &--title {
+      display: flex;
+      flex-direction: column;
+
+      div {
+        margin-top: 15px;
+        position: relative;
+      }
+    }
+  }
+
+  &__classList {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 30px;
+  }
+}
+
+@include mediaDesktop {
+  .teacherDashboard__body--title {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    div {
+      margin-top: 0;
+
+      input {
+        width: 400px;
+      }
+    }
+  }
+}

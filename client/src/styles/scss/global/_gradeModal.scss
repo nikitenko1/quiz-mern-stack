@@ -1,0 +1,68 @@
+.gradeModal {
+  @include modal;
+
+  &.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &__box {
+    width: 100%;
+    max-width: 600px;
+    background: #fff;
+    border-radius: 5px;
+    height: 85vh;
+    overflow: auto;
+    transform: translateY(-80px);
+    opacity: 0;
+    transition: transform 200ms 200ms;
+
+    &.active {
+      opacity: 1;
+      transform: translateY(0);
+      transition: transform 200ms;
+    }
+  }
+  &::-webkit-scrollbar {
+    width: 13px;
+
+    &-track {
+      background: #f1f1f1;
+    }
+
+    &-thumb {
+      background: $ternary-color;
+      border-radius: 50px;
+    }
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    border-bottom: 1px solid #ccc;
+
+    svg {
+      cursor: pointer;
+      font-size: 19px;
+    }
+  }
+
+  &__body {
+    padding: 15px 20px;
+
+    & > h4 {
+      margin-bottom: 20px;
+      text-align: right;
+    }
+
+    .questionBox {
+      box-shadow: none;
+      padding: 0;
+    }
+  }
+  &__question:not(:last-child) {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ccc;
+  }
+}

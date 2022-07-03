@@ -1,0 +1,71 @@
+.roleModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, .7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 30px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms;
+
+  &.active {
+    opacity: 1;
+    pointer-events: all;
+    transition: opacity 300ms;
+  }
+
+  &__box {
+    width: 100%;
+    max-width: 500px;
+    background: #fff;
+    border-radius: 5px;
+    opacity: 0;
+    transform: translateY(-60px);
+    transition: transform 300ms 200ms;
+
+    &.active {
+      opacity: 1;
+      transform: translateY(0);
+      transition: transform 300ms;
+    }
+  }
+
+  &__header {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+
+    svg {
+      cursor: pointer;
+      font-size: 18px;
+    }
+  }
+
+  &__body {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  &__choice {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 25px;
+    flex-direction: column;
+  }
+}
+
+@include mediaDesktop {
+  .roleModal__choice {
+    flex-direction: row;
+  }
+}

@@ -1,0 +1,29 @@
+.peopleCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  padding: 12px 15px;
+
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    &--info {
+      h3 {
+        margin-bottom: 5px;
+      }
+    }
+  }
+  &__right button {
+    width: 50px;
+    height: 28px;
+    line-height: 28px;
+    background: rgb(238, 48, 48);
+    &:hover {
+      background: rgb(209, 42, 42);
+    }
+  }
+}

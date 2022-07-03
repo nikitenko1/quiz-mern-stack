@@ -1,0 +1,35 @@
+.classDetail {
+  &__header p {
+    margin-top: 7px;
+  }
+
+  &__body {
+    margin-top: 20px;
+
+    &--header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+  }
+
+  &__quizList {
+    margin-top: 30px;
+  }
+}
+
+@include mediaDesktop {
+  .classDetail__body {
+    display: flex;
+    align-items: flex-start;
+    gap: 70px;
+
+    &__quizList {
+      margin-top: 0;
+    }
+
+    &--body {
+      flex: 1;
+    }
+  }
+}

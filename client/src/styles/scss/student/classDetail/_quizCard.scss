@@ -1,0 +1,28 @@
+.quizCard {
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  padding: 10px 15px;
+
+  &:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
+  h4 {
+    a {
+      color: rgb(88, 88, 255);
+      text-decoration: underline;
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    & p:first-child {
+      cursor: pointer;
+    }
+  }
+}

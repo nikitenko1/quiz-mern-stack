@@ -1,0 +1,128 @@
+.studentDashboard {
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  &__search {
+    position: relative;
+    flex: 1;
+
+    input {
+      height: 40px;
+      border-radius: 5px;
+      text-indent: 7px;
+      border: 1px solid rgb(146, 146, 146);
+      outline: none;
+      width: 100%;
+
+      &:focus {
+        outline: 2px solid $secondary-color;
+      }
+    }
+
+    svg {
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      transform: translateY(-50%);
+    }
+
+    &Result {
+      position: absolute;
+      top: 100%;
+      transform: translateY(8px);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      border-radius: 5px;
+      width: 100%;
+      background: #fff;
+      z-index: 99;
+
+      &--blank {
+        text-align: center;
+        color: rgb(241, 51, 51);
+        font-weight: bold;
+        font-size: 20px;
+        padding: 15px 0;
+      }
+
+      &--item {
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        p {
+          font-size: 15px;
+          color: $primary-color;
+          font-weight: bold;
+          cursor: pointer;
+        }
+
+        &:not(:last-child) {
+          border-bottom: 1px solid #ccc;
+        }
+      }
+    }
+  }
+
+  &__filter {
+    position: relative;
+
+    &--btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+      padding: 10px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    &--dropdown {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      margin-top: 10px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+      border-radius: 5px;
+      width: 200px;
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform 200ms;
+      background: #fff;
+
+      &.active {
+        transform: scaleY(1);
+        z-index: 999;
+      }
+
+      div {
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+
+        svg {
+          font-size: 25px;
+        }
+
+        &:not(:last-child) {
+          border-bottom: 1px solid #ccc;
+        }
+
+        &:hover {
+          background: rgb(228, 228, 228);
+        }
+      }
+    }
+  }
+
+  &__body {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 30px;
+  }
+}

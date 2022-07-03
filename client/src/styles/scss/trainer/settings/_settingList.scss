@@ -1,0 +1,30 @@
+.settingList {
+  h4 {
+    margin-bottom: 20px;
+  }
+
+  .restrictGroup {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+
+  form {
+    margin-bottom: 25px;
+  }
+
+  .createQuizBtn {
+    width: 100%;
+  }
+
+  .deleteBtn {
+    width: 100%;
+    background: rgb(230, 42, 42);
+    margin-top: 10px;
+
+    &:hover {
+      background: rgb(201, 51, 51);
+    }
+  }
+}

@@ -1,0 +1,257 @@
+.navbar {
+  background: $primary-color;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+
+  h2 a {
+    color: #fff;
+  }
+
+  svg {
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  &__overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    transition: opacity 200ms;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 100 !important;
+
+    &.active {
+      opacity: 1;
+      pointer-events: all;
+      z-index: 999;
+    }
+  }
+
+  &__links {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 200px;
+    height: 100vh;
+    background: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    transition: right 200ms;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+    button {
+      all: unset;
+    }
+
+    p {
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+
+    &.active {
+      right: 0;
+    }
+
+    &--closeIcon {
+      text-align: right;
+      margin-bottom: 10px;
+
+      svg {
+        font-size: 25px;
+      }
+    }
+
+    &--notification {
+      margin-bottom: 20px;
+      position: relative;
+
+      &Icon {
+        position: relative;
+
+        div {
+          position: absolute;
+          top: -10px;
+          right: -10px;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          background-color: rgb(255, 70, 70);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 13px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+      }
+
+      &Dropdown {
+        position: absolute;
+        top: 100%;
+        transform: translateY(8px);
+        right: 0;
+        width: 300px;
+        border-radius: 5px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+        background-color: #fff;
+        color: #000;
+        max-height: 500px;
+        overflow: auto;
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform 150ms;
+
+        &.active {
+          transform: scaleY(1);
+        }
+        // ::-webkit-scrollbar — the entire scrollbar.
+        &::-webkit-scrollbar {
+          width: 13px;
+          // ::-webkit-scrollbar-thumb — the draggable scrolling handle.
+          &-track {
+            background: #f1f1f1;
+          }
+          // ::-webkit-scrollbar-track — the track (progress bar) of the scrollbar,
+          // where there is a gray bar on top of a white bar
+          &-thumb {
+            background: $ternary-color;
+            border-radius: 50px;
+          }
+        }
+      }
+
+      &Content {
+        padding: 10px 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #000;
+
+        div:first-child {
+          flex: 1;
+        }
+        // <element class="navbar__links--notificationContent">
+        //   <element>
+        //   <element>
+        & > * + * {
+          margin-left: 10px;
+        }
+
+        div:last-child {
+          flex-shrink: 0;
+        }
+
+        &:hover {
+          background: #ccc;
+        }
+
+        div:first-child > * + * {
+          margin-top: 7px;
+        }
+
+        a:first-child {
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px;
+        }
+
+        a:last-child {
+          border-bottom-left-radius: 5px;
+          border-bottom-right-radius: 5px;
+        }
+      }
+    }
+
+    &--profile {
+      position: relative;
+
+      img {
+        cursor: pointer;
+      }
+
+      &Dropdown {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: #fff;
+        width: 210px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform 200ms;
+        margin-top: 10px;
+
+        &.active {
+          transform: scaleY(1);
+        }
+
+        a {
+          display: flex;
+          padding: 10px 15px;
+          align-items: center;
+          gap: 10px;
+          color: #000;
+
+          svg {
+            font-size: 17px;
+          }
+          &:not(:last-child) {
+            border-bottom: 1px solid #ccc;
+          }
+          &:hover {
+            background: rgb(235, 235, 235);
+          }
+          &:first-child {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+          }
+
+          &:last-child {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mediaDesktop {
+  .navbar {
+    padding: 15px 50px;
+    & > svg {
+      display: none;
+    }
+    &__overlay {
+      all: unset;
+    }
+    &__links {
+      all: unset;
+      display: flex;
+      align-items: center;
+      gap: 25px;
+
+      &--closeIcon {
+        display: none;
+      }
+      p,
+      &--notification {
+        margin-bottom: 0;
+      }
+      &--notification {
+        transform: translateY(3px);
+      }
+    }
+  }
+}

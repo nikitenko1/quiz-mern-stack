@@ -1,0 +1,17 @@
+.classCard {
+  width: 100%;
+  background: $primary-color;
+  border-radius: 5px;
+  padding: 20px;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: transform 150ms;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+
+  p {
+    margin: 10px 0;
+  }
+}

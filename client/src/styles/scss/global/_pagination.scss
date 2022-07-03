@@ -1,0 +1,42 @@
+.pagination {
+  background: $primary-color;
+  display: flex;
+  width: fit-content;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  margin-top: 40px;
+
+  div button {
+    border-right: 1px solid rgb(124, 124, 124);
+  }
+
+  button {
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    padding: 2px !important;
+    border-radius: 0;
+
+    &.active {
+      background: $primary-hover;
+    }
+
+    &:not(:last-child) {
+      border-right: 1px solid rgb(124, 124, 124);
+    }
+
+    &:first-child {
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+
+    &:last-child {
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+
+    &:hover {
+      background: $primary-hover;
+    }
+  }
+}

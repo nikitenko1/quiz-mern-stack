@@ -1,0 +1,35 @@
+.notFound {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  flex-direction: column;
+
+  h2 {
+    color: rgb(91, 91, 91);
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 20px;
+  }
+
+  a {
+    background: $primary-color;
+    display: block;
+    margin-top: 20px;
+    width: 125px;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    transition: background 200ms;
+
+    &:hover {
+      background: $primary-hover;
+    }
+  }
+}

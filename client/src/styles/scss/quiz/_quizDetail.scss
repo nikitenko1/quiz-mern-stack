@@ -1,0 +1,34 @@
+.quizDetail__header > * + * {
+  margin-top: 10px;
+}
+.quizDetail__body {
+  margin-top: 30px;
+  height: 60vh;
+  overflow: auto;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  padding: 15px 20px;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+
+    &-track {
+      background: #f1f1f1;
+      border-radius: 50px;
+    }
+
+    &-thumb {
+      background: $ternary-color;
+      border-radius: 50px;
+    }
+  }
+}
+  
+.quizDetail__question:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+.quizDetail button {
+  float: right;
+  margin-top: 20px;
+}

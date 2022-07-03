@@ -1,0 +1,107 @@
+.filterSearch {
+  position: relative;
+
+  &--btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 8px 10px;
+    cursor: pointer;
+  }
+
+  &--overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 200ms;
+
+    &.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  &--sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    background: #fff;
+    height: 100vh;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 230px;
+    padding: 20px;
+    transition: left 200ms;
+
+    &.active {
+      left: 0;
+    }
+  }
+
+  &--close {
+    text-align: right;
+    margin-bottom: 20px;
+    svg {
+      cursor: pointer;
+      font-size: 22px;
+    }
+  }
+
+  &--single {
+    h4 {
+      margin-bottom: 15px;
+    }
+
+    .inputGroup {
+      margin-bottom: 10px !important;
+
+      input {
+        margin-right: 10px;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &--noInput {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    svg {
+      font-size: 22px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@include mediaDesktop {
+  .filterSearch {
+    position: unset;
+
+    &--overlay {
+      all: unset;
+    }
+
+    &--btn,
+    &--close {
+      display: none;
+    }
+
+    &--sidebar {
+      all: unset;
+    }
+  }
+}

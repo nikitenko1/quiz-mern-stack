@@ -1,0 +1,285 @@
+@import './config', './global/loader', './global/notFound', './global/navbar',
+  './global/avatar', './global/changePassword', './global/editProfile',
+  './global/classCard', './global/pagination', './global/infoCard',
+  './global/gradeModal', './global/questionBox';
+@import './auth/auth', './auth/role', './auth/roleModal';
+@import './trainer/dashboard/createClass',
+  './trainer/dashboard/classDetailModal', './trainer/dashboard/trainerDashboard';
+@import './trainer/people/peopleCard';
+@import './trainer/settings/settingList';
+@import './trainer/quizes/quizCard';
+@import './student/dashboard/joinClass', './student/dashboard/studentDashboard';
+@import './student/classDetail/classDetail', './student/classDetail/quizCard',
+  './student/classDetail/filterSearch';
+@import './createQuiz/createQuiz';
+@import './quiz/quizDetail';
+@import './submission/submission';
+
+a {
+  text-decoration: none;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.correct {
+  color: rgb(65, 208, 65);
+}
+
+.wrong {
+  color: red;
+}
+
+.mt-5 {
+  margin-top: 30px;
+}
+
+.float-right {
+  float: right;
+}
+
+.circle {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: $primary-color;
+}
+
+.clear {
+  clear: both;
+}
+
+.sort-active,
+.filter-active {
+  background: $primary-color;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  padding: 8px 12px;
+}
+
+.errorMessage {
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px 0;
+  background: rgb(226, 89, 89);
+  color: #fff;
+  font-weight: bold;
+  margin-top: 30px;
+  width: 100%;
+  max-width: 500px;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: $primary-color;
+  color: #fff;
+  width: 70px;
+  height: 35px;
+  line-height: 35px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 300ms;
+
+  &:hover {
+    background: $primary-hover;
+  }
+}
+
+.container {
+  padding: 20px 30px;
+}
+
+table {
+  width: 100%;
+
+  thead {
+    tr th {
+      border-top: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0;
+    }
+  }
+
+  tbody {
+    tr td {
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0;
+      text-align: center;
+
+      button {
+        font-size: 12px !important;
+        width: 100px;
+        height: 25px;
+        line-height: 25px;
+      }
+    }
+  }
+}
+
+.inputGroup {
+  margin-bottom: 20px;
+
+  input[type='text'],
+  input[type='password'],
+  input[type='number'],
+  input[type='file'],
+  textarea {
+    width: 100%;
+    border: 1px solid rgb(146, 146, 146);
+    outline: none;
+    border-radius: 5px;
+    height: 35px;
+    text-indent: 7px;
+    padding-right: 7px;
+    margin-top: 10px;
+
+    &:focus {
+      outline: 3px solid $ternary-color;
+    }
+  }
+
+  textarea {
+    text-indent: 0;
+    padding: 7px;
+    height: 150px;
+  }
+
+  &--phone {
+    display: flex;
+
+    div {
+      background: rgb(196, 196, 196);
+      margin-top: 10px;
+      border-radius: 5px 0 0 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 25px;
+      padding: 0 8px;
+      border: 1px solid rgb(146, 146, 146);
+      border-right: none;
+    }
+
+    input {
+      border-radius: 0 5px 5px 0 !important;
+      border-left: none !important;
+    }
+  }
+
+  &--password {
+    position: relative;
+
+    input {
+      padding-right: 40px;
+    }
+
+    svg {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-4px);
+      cursor: pointer;
+      color: rgb(141, 141, 141);
+    }
+  }
+
+  &--answer {
+    display: flex;
+    align-items: center;
+
+    svg {
+      transform: translateX(5px);
+      font-size: 21px;
+    }
+
+    p {
+      margin-left: 5px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+
+  &--flex {
+    display: flex;
+    margin-bottom: 20px;
+
+    .inputGroup {
+      flex: 1;
+      margin-left: 20px;
+    }
+  }
+}
+
+.searchInput {
+  position: relative;
+  margin-bottom: 20px;
+
+  input {
+    width: 100%;
+    border: 1px solid rgb(146, 146, 146);
+    outline: none;
+    border-radius: 5px;
+    height: 35px;
+    padding-right: 30px;
+    text-indent: 7px;
+
+    &:focus {
+      outline: 2px solid $secondary-color;
+    }
+  }
+
+  svg {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+  }
+}
+
+.switchOuter {
+  width: 76px;
+  height: 27px;
+  border-radius: 50px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  flex-direction: row-reverse;
+
+  p {
+    font-size: 14px;
+  }
+
+  &.active {
+    flex-direction: row;
+  }
+
+  &.active .switchInner {
+    background: rgb(27, 191, 27);
+  }
+
+  .switchInner {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgb(228, 59, 59);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  }
+}
+
+#__react-alert__ div {
+  z-index: 9999 !important;
+}
+
+@include mediaDesktop {
+  .container {
+    padding: 30px 50px;
+  }
+}

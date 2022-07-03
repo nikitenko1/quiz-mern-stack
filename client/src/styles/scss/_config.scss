@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+$primary-color: #5584b1;
+$secondary-color: #85c1e5;
+$ternary-color: #cbe2ef;
+$primary-hover: #254e7b;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+@mixin modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 30px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms;
+  z-index: 9999 !important;
+}
+
+@mixin mediaDesktop {
+  @media (min-width: 700px) {
+    @content;
+  }
+}
